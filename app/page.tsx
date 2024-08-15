@@ -1,113 +1,248 @@
+import { Button } from "@/components/Button";
+import Form from "@/components/Form";
+import { QandA } from "@/components/QandA";
+import { Video } from "@/components/Video";
 import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="container mx-auto max-w-[1200px]">
+      <section className="grid grid-cols-2 items-center lg:grid-cols-1">
+        <div className="max-w-[582px] lg:order-2">
+          <h1 className="mb-5">
+            An easy method for purchasing energy on the Tron network{" "}
+          </h1>
+          <p className="text-xl">
+            Save 50% on transaction fees! Maximize your savings. <br /> Benefit
+            from reduced costs with every transaction
+          </p>
+          <Button className="mt-10">Registration </Button>
         </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
+        <Video src="hero-video.mp4" />
+      </section>
+      <section className="mt-14">
+        <h2>Key Features </h2>
+        <p>
+          We offer numerous advantages, ensuring efficient, secure, and
+          cost-effective energy transactions tailored to meet diverse needs
+        </p>
+        <div className="grid grid-cols-3 mt-10 gap-[30px] lg:grid-cols-1 ">
+          <div className="px-6 py-8 h-[480px] lg:h-auto card-gradient rounded-[18px]">
+            <div className="h-[111px] sm:h-[70px] flex items-center mb-[30px]">
+              <Image
+                className="sm:scale-75"
+                src={"/shield.png"}
+                width={104}
+                height={111}
+                alt="shield image"
+              />
+            </div>
+            <h3>Privacy features </h3>
+            <div>
+              We prioritize user privacy with stringent measures to safeguard
+              sensitive information. We don't require KYC to verify the identity
+              of our clients or document submissions for registration. Simply
+              sign up using just your email address
+            </div>
+          </div>
+          <div className="px-6 py-8 h-[480px] lg:h-auto card-gradient rounded-[18px]">
+            <div className="h-[111px] sm:h-[70px] flex items-center mb-[30px]">
+              <Image
+                className="sm:scale-75"
+                src={"/money.png"}
+                width={148}
+                height={111}
+                alt="money image"
+              />
+            </div>
+            <h3>Flexible pricing policy </h3>
+            <div>
+              Allowing users to choose plans that best fit their individual
+              needs and budgets. This adaptable approach ensures that everyone
+              can find a suitable option, whether they have high or low energy
+              requirements
+            </div>
+          </div>
+          <div className="px-6 py-8 h-[480px] lg:h-auto card-gradient rounded-[18px]">
+            <div className="h-[111px] sm:h-[70px] flex items-center mb-[30px]">
+              <Image
+                className="sm:scale-75"
+                src={"/clock.png"}
+                width={104}
+                height={111}
+                alt="clock image"
+              />
+            </div>
+            <h3>Fast transaction time </h3>
+            <div>
+              We ensure rapid transaction times, allowing users to complete
+              their energy purchases quickly and efficiently. With minimal
+              delays, you can enjoy seamless and prompt access to the energy you
+              need
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mt-40 lg:mt-20">
+        <h2>What amount can you conserve with NeutronX</h2>
+        <p>
+          Please provide either the wallet address or the average daily
+          transaction count for your wallet
+        </p>
+        <div className="grid grid-cols-2 lg:grid-cols-1 gap-8 mt-10">
+          <div className="w-full card-gradient rounded-[18px] border border-[#B585FC]">
+            <div className="px-[40px] pt-10 pb-16">
+              <div className="border-b border-[#B585FC] pb-3 text-xl font-semibold">
+                Enter your wallet address
+              </div>
+              <div className="text-[18px] mt-10 mb-[30px]">
+                What you pay for 0 transactions
+              </div>
+              <div className="flex justify-between items-center mb-5">
+                <span>Without NeutronX</span>—
+              </div>
+              <div className="flex justify-between items-center mb-[60px]">
+                <span>With NeutronX</span>—
+              </div>
+            </div>
+            <div className="px-[40px] py-[30px] border-t border-t-[#7F808D]">
+              Economy
+            </div>
+          </div>
+          <div className="w-full card-gradient rounded-[18px]">
+            <div className="px-[40px] pt-10 pb-16">
+              <div className="border-b border-[#7F808D] pb-3 text-xl font-semibold text-[#7F808D]">
+                Enter number of transactions
+              </div>
+              <div className="text-[18px] mt-10 mb-[30px]">
+                What you pay for 0 transactions
+              </div>
+              <div className="flex justify-between items-center mb-5">
+                <span>Without NeutronX</span>—
+              </div>
+              <div className="flex justify-between items-center mb-[60px]">
+                <span>With NeutronX</span>—
+              </div>
+            </div>
+            <div className="px-[40px] py-[30px] border-t border-t-[#7F808D]">
+              Economy
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="mt-40 lg:mt-20">
+        <div>
+          <h2>Main Benefits</h2>
+          <p>
+            With a smooth and hassle-free process for acquiring energy, we allow
+            users to easily and quickly obtain the energy they need without any
+            complications
+          </p>
+        </div>
+        <div className="px-32">
+          <div className="border-b border-dashed flex justify-between max-w-[800px] mx-auto w-full mt-40 lg:mt-40">
+            <div className="flex items-center justify-center text-black font-semibold roboto relative translate-y-[50%]">
+              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center">
+                1
+              </span>
+              <div className="absolute h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px]">
+                Sign up
+              </div>
+              <div className="absolute w-[1px] bg-gray-400 h-20 bottom-0 -z-10"></div>
+            </div>
+            <div className="flex items-center justify-center text-black font-semibold roboto relative translate-y-[50%]">
+              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center">
+                2
+              </span>
+              <div className="absolute h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] top-[100px]">
+                Enter your wallet
+              </div>
+              <div className="absolute w-[1px] bg-gray-400 h-20 top-6 -z-10"></div>
+            </div>
+            <div className="flex items-center justify-center text-black font-semibold roboto relative translate-y-[50%]">
+              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center">
+                3
+              </span>
+              <div className="absolute h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px]">
+                Pay the bill
+              </div>
+              <div className="absolute w-[1px] bg-gray-400 h-20 bottom-0 -z-10"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="grid grid-cols-2 lg:grid-cols-1 items-center mt-32 lg:mt-48">
+        <div>
+          <h2>Seamless Integration </h2>
+          <p>
+            Simply provide your wallet details, and the system will
+            automatically compute the necessary transaction count for your
+            business needs!
+          </p>
+        </div>
+        <div className="">
+          <Video src="net-video.mp4" />
+        </div>
+      </section>
+      <section className="mt-40 lg:mt-20">
+        <h2>Strategies for Saving with NeutronX</h2>
+        <p>
+          When you stake TRX, you unlock Energy which serves as payment for
+          transaction fees within the TRON ecosystem, such as transferring USDT
+          or utilizing smart contracts. We possess ample reserves of Energy and
+          extend the opportunity for you to acquire it, which proves more
+          advantageous compared to paying fees with TRX.
+        </p>
+        <div className="grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-8 mt-10">
+          <div className="h-[256px] sm:h-[180px] w-full card-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px]">
+            <p>Energy quantity</p>
+            <h2 className="roboto font-semibold text-purple">134 546 765</h2>
+          </div>
+          <div className="h-[256px] sm:h-[180px] w-full card-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px]">
+            <p>Energy that has been transferred in total </p>
+            <h2 className="roboto font-semibold text-purple">13 657 768 321</h2>
+          </div>
+          <div className="h-[256px] sm:h-[180px] w-full card-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px] lg:col-span-2 sm:col-span-1">
+            <p>Our clients save</p>
+            <h2 className="roboto font-semibold text-purple">$ 543 890</h2>
+          </div>
+        </div>
+      </section>
+      <section className="mt-40 lg:mt-20">
+        <h2>Digital Currency Merchant</h2>
+        <p>
+          We offer our clients the services of a cryptocurrency merchant from
+          the company chanter.energy
+        </p>
         <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          className="mt-20 mx-auto"
+          src={"/orbit.png"}
+          width={670}
+          height={670}
+          alt="hero image"
         />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
+      <section className="grid grid-cols-2 lg:grid-cols-1 gap-10 items-center mt-40 lg:mt-20">
+        <div>
+          <h2>Have any questions? We’ve got answers</h2>
+          <QandA />
+        </div>
+        <div>
+          <Image
+            className="lg:hidden"
+            src={"/QandA.png"}
+            width={670}
+            height={670}
+            alt="hero image"
+          />
+        </div>
+      </section>
+      <section className="mt-40 lg:mt-20">
+        <h2>Register now </h2>
+        <p>Learn how to get the lowest commission on the market</p>
+        <Form />
+      </section>
+     
     </main>
   );
 }
