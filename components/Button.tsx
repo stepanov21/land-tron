@@ -9,7 +9,7 @@ const Button = React.forwardRef<HTMLButtonElement, TitleProps>(
     return (
       <button
         className={cn(
-          "px-7 py-4 bg-accent rounded-full font-semibold text-[#252032] flex items-center justify-center sm:w-full text-nowrap",
+          "px-7 py-4 bg-accent rounded-full font-semibold text-[#252032] flex items-center justify-center sm:w-full text-nowrap dark:text-white",
           className,
         )}
         ref={ref}

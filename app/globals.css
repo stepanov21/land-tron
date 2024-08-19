@@ -97,6 +97,18 @@ body {
   line-height: 1.5;
 }
 
+body[data-mode="dark"] {
+  background: white;
+}
+
+*[data-mode="dark"] {
+  color: #2F2E2C;
+}
+
+*[data-mode="dark"] .bg-accent {
+  background-color: black;
+}
+
 h1 {
   font-size: 50px;
   line-height: 60px;
@@ -126,6 +138,10 @@ h5 {
   margin-bottom: 14px;
 }
 
+.card-shadow {
+  box-shadow: 0px 4px 15px 0px #0000001a;
+}
+
 @media screen and (max-width: 700px) {
   h1 {
     font-size: 32px;
@@ -136,7 +152,6 @@ h5 {
     line-height: 36px;
   }
 }
-
 
 nav * {
   font-size: 14px;
@@ -150,6 +165,34 @@ nav * {
     rgba(37, 32, 50, 0.5) 67.44%,
     rgba(37, 32, 50, 0.3) 96.35%
   );
+}
+
+.strategies-gradient {
+  background: linear-gradient(
+    91.88deg,
+    #252032 1.59%,
+    rgba(37, 32, 50, 0.5) 67.44%,
+    rgba(37, 32, 50, 0.3) 96.35%
+  );
+}
+
+*[data-mode="dark"] .strategies-gradient {
+  background: linear-gradient(#c1a875, #c1a875),
+    linear-gradient(-29.369deg, rgba(255, 255, 255, 0%) 0%, #ffffff 100%),
+    linear-gradient(
+      76.816deg,
+      #809095 0%,
+      #bcc0c0 20%,
+      #98a09f 40%,
+      #768589 58%,
+      #949a9c 80%,
+      #6c797d 96%
+    );
+  background-blend-mode: color;
+}
+
+*[data-mode="dark"] .strategies-gradient * {
+  color: white;
 }
 
 @layer utilities {

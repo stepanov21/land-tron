@@ -1,5 +1,7 @@
 import { Button } from "@/components/Button";
 import Form from "@/components/Form";
+import FutureCard from "@/components/FutureCard";
+import Orbit from "@/components/Orbit";
 import { QandA } from "@/components/QandA";
 import { Video } from "@/components/Video";
 import Image from "next/image";
@@ -18,7 +20,8 @@ export default function Home() {
           </p>
           <Button className="mt-10">Registration </Button>
         </div>
-        <Video src="hero-video.mp4" />
+        <Video className="dark:hidden" src="hero-video" />
+        <Video className="hidden dark:block" src="hero-video-white" />
       </section>
       <section className="mt-14">
         <h2>Key Features </h2>
@@ -27,60 +30,30 @@ export default function Home() {
           cost-effective energy transactions tailored to meet diverse needs
         </p>
         <div className="grid grid-cols-3 mt-10 gap-[30px] lg:grid-cols-1 ">
-          <div className="px-6 py-8 h-[480px] lg:h-auto card-gradient rounded-[18px]">
-            <div className="h-[111px] sm:h-[70px] flex items-center mb-[30px]">
-              <Image
-                className="sm:scale-75"
-                src={"/shield.png"}
-                width={104}
-                height={111}
-                alt="shield image"
-              />
-            </div>
-            <h3>Privacy features </h3>
-            <div>
-              We prioritize user privacy with stringent measures to safeguard
+          <FutureCard
+            imageSrc="shield"
+            text="We prioritize user privacy with stringent measures to safeguard
               sensitive information. We don't require KYC to verify the identity
               of our clients or document submissions for registration. Simply
-              sign up using just your email address
-            </div>
-          </div>
-          <div className="px-6 py-8 h-[480px] lg:h-auto card-gradient rounded-[18px]">
-            <div className="h-[111px] sm:h-[70px] flex items-center mb-[30px]">
-              <Image
-                className="sm:scale-75"
-                src={"/money.png"}
-                width={148}
-                height={111}
-                alt="money image"
-              />
-            </div>
-            <h3>Flexible pricing policy </h3>
-            <div>
-              Allowing users to choose plans that best fit their individual
+              sign up using just your email address"
+            title="Privacy features"
+          />
+          <FutureCard
+            imageSrc="money"
+            text="Allowing users to choose plans that best fit their individual
               needs and budgets. This adaptable approach ensures that everyone
               can find a suitable option, whether they have high or low energy
-              requirements
-            </div>
-          </div>
-          <div className="px-6 py-8 h-[480px] lg:h-auto card-gradient rounded-[18px]">
-            <div className="h-[111px] sm:h-[70px] flex items-center mb-[30px]">
-              <Image
-                className="sm:scale-75"
-                src={"/clock.png"}
-                width={104}
-                height={111}
-                alt="clock image"
-              />
-            </div>
-            <h3>Fast transaction time </h3>
-            <div>
-              We ensure rapid transaction times, allowing users to complete
+              requirements"
+            title="Flexible pricing policy "
+          />
+          <FutureCard
+            imageSrc="clock"
+            text="We ensure rapid transaction times, allowing users to complete
               their energy purchases quickly and efficiently. With minimal
               delays, you can enjoy seamless and prompt access to the energy you
-              need
-            </div>
-          </div>
+              need"
+            title="Fast transaction time"
+          />
         </div>
       </section>
       <section className="mt-40 lg:mt-20">
@@ -90,9 +63,9 @@ export default function Home() {
           transaction count for your wallet
         </p>
         <div className="grid grid-cols-2 lg:grid-cols-1 gap-8 mt-10">
-          <div className="w-full card-gradient rounded-[18px] border border-[#B585FC]">
+          <div className="w-full card-gradient rounded-[18px] border border-[#B585FC] dark:bg-none dark:bg-[#F1F1F1] dark:border-black">
             <div className="px-[40px] pt-10 pb-16">
-              <div className="border-b border-[#B585FC] pb-3 text-xl font-semibold">
+              <div className="border-b border-[#B585FC] dark:border-black pb-3 text-xl font-semibold">
                 Enter your wallet address
               </div>
               <div className="text-[18px] mt-10 mb-[30px]">
@@ -109,7 +82,7 @@ export default function Home() {
               Economy
             </div>
           </div>
-          <div className="w-full card-gradient rounded-[18px]">
+          <div className="w-full card-gradient rounded-[18px] dark:bg-none dark:bg-[#F1F1F1]">
             <div className="px-[40px] pt-10 pb-16">
               <div className="border-b border-[#7F808D] pb-3 text-xl font-semibold text-[#7F808D]">
                 Enter number of transactions
@@ -139,10 +112,10 @@ export default function Home() {
             complications
           </p>
         </div>
-        <div className="px-32">
-          <div className="border-b border-dashed flex justify-between max-w-[800px] mx-auto w-full mt-40 lg:mt-40">
+        <div className="px-32  sm:hidden">
+          <div className="border-b border-dashed dark:border-black flex justify-between max-w-[800px] mx-auto w-full mt-40 lg:mt-40">
             <div className="flex items-center justify-center text-black font-semibold roboto relative translate-y-[50%]">
-              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center">
+              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center dark:text-white">
                 1
               </span>
               <div className="absolute h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px]">
@@ -151,7 +124,7 @@ export default function Home() {
               <div className="absolute w-[1px] bg-gray-400 h-20 bottom-0 -z-10"></div>
             </div>
             <div className="flex items-center justify-center text-black font-semibold roboto relative translate-y-[50%]">
-              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center">
+              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center dark:text-white">
                 2
               </span>
               <div className="absolute h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] top-[100px]">
@@ -160,13 +133,43 @@ export default function Home() {
               <div className="absolute w-[1px] bg-gray-400 h-20 top-6 -z-10"></div>
             </div>
             <div className="flex items-center justify-center text-black font-semibold roboto relative translate-y-[50%]">
-              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center">
+              <span className="relative z-100 size-6 bg-accent rounded-full flex items-center justify-center dark:text-white">
                 3
               </span>
               <div className="absolute h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px]">
                 Pay the bill
               </div>
               <div className="absolute w-[1px] bg-gray-400 h-20 bottom-0 -z-10"></div>
+            </div>
+          </div>
+        </div>
+        <div className="mt-20 space-y-20 hidden sm:block relative">
+          <div className="absolute border-l border-dashed top-6 left-3 h-[260px] dark:border-black"></div>
+          <div className="flex text-black items-center">
+            <span className="relative z-100 size-6 bg-accent rounded-full  flex items-center justify-center dark:text-white shrink-0 roboto font-semibold">
+              1
+            </span>
+            <div className="w-[150px] bg-gray-400 h-[1px] top-6 -z-10"></div>
+            <div className="h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px] shrink-0">
+              Sign up
+            </div>
+          </div>
+          <div className="flex text-black items-center">
+            <span className="relative z-100 size-6 bg-accent rounded-full  flex items-center justify-center dark:text-white shrink-0 roboto font-semibold">
+              2
+            </span>
+            <div className="w-[150px] bg-gray-400 h-[1px] top-6 -z-10"></div>
+            <div className="h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px] shrink-0">
+              Enter your wallet
+            </div>
+          </div>
+          <div className="flex text-black items-center">
+            <span className="relative z-100 size-6 bg-accent rounded-full  flex items-center justify-center dark:text-white shrink-0 roboto font-semibold">
+              3
+            </span>
+            <div className="w-[150px] bg-gray-400 h-[1px] top-6 -z-10"></div>
+            <div className="h-[50px] border border-purple rounded-[18px] w-[240px] text-white flex items-center justify-center font-medium bg-[#221D2F] -top-[100px] shrink-0">
+              Pay the bill
             </div>
           </div>
         </div>
@@ -181,7 +184,8 @@ export default function Home() {
           </p>
         </div>
         <div className="">
-          <Video src="net-video.mp4" />
+          <Video className="dark:hidden" src="net-video" />
+          <Video className="hidden dark:block" src="net-video-white" />
         </div>
       </section>
       <section className="mt-40 lg:mt-20">
@@ -194,15 +198,15 @@ export default function Home() {
           advantageous compared to paying fees with TRX.
         </p>
         <div className="grid grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 gap-8 mt-10">
-          <div className="h-[256px] sm:h-[180px] w-full card-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px]">
+          <div className="h-[256px] sm:h-[180px] w-full strategies-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px]">
             <p>Energy quantity</p>
             <h2 className="roboto font-semibold text-purple">134 546 765</h2>
           </div>
-          <div className="h-[256px] sm:h-[180px] w-full card-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px]">
+          <div className="h-[256px] sm:h-[180px] w-full strategies-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px]">
             <p>Energy that has been transferred in total </p>
             <h2 className="roboto font-semibold text-purple">13 657 768 321</h2>
           </div>
-          <div className="h-[256px] sm:h-[180px] w-full card-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px] lg:col-span-2 sm:col-span-1">
+          <div className="h-[256px] sm:h-[180px] w-full strategies-gradient rounded-[18px] flex flex-col justify-between px-5 pt-[30px] lg:col-span-2 sm:col-span-1">
             <p>Our clients save</p>
             <h2 className="roboto font-semibold text-purple">$ 543 890</h2>
           </div>
@@ -214,13 +218,7 @@ export default function Home() {
           We offer our clients the services of a cryptocurrency merchant from
           the company chanter.energy
         </p>
-        <Image
-          className="mt-20 mx-auto"
-          src={"/orbit.png"}
-          width={670}
-          height={670}
-          alt="hero image"
-        />
+        <Orbit />
       </section>
       <section className="grid grid-cols-2 lg:grid-cols-1 gap-10 items-center mt-40 lg:mt-20">
         <div>
@@ -229,8 +227,15 @@ export default function Home() {
         </div>
         <div>
           <Image
-            className="lg:hidden"
+            className="lg:hidden dark:hidden"
             src={"/QandA.png"}
+            width={670}
+            height={670}
+            alt="hero image"
+          />
+          <Image
+            className=" hidden dark:block lg:hidden"
+            src={"/QandA-white.png"}
             width={670}
             height={670}
             alt="hero image"
@@ -242,7 +247,6 @@ export default function Home() {
         <p>Learn how to get the lowest commission on the market</p>
         <Form />
       </section>
-     
     </main>
   );
 }
