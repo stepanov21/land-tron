@@ -3,7 +3,7 @@ import React from "react";
 
 const Orbit = () => {
   return (
-    <>
+    <div className="orbit">
       <Image
         className="mt-20 mx-auto dark:hidden"
         src={`/orbit.svg`}
@@ -18,7 +18,7 @@ const Orbit = () => {
         height={670}
         alt="hero image"
       />
-    </>
+    </div>
   );
 };
 
